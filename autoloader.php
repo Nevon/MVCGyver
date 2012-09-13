@@ -1,5 +1,4 @@
 <?php
-//TODO: Kill all humans. Also, figure out why PHP refuses to autoload my classes
 function __autoload($class) {
 	$class = strtolower($class);
 	//If the classname ends with "model", load it from that directory
@@ -10,5 +9,4 @@ function __autoload($class) {
 		require_once('controllers/'. str_replace('controller', '', $class) .'.php');
 	}
 }
-//spl_autoload_register();
 ?>
