@@ -31,7 +31,6 @@ class Router {
 	public function createController() {
 		//Check if the class exists
 		try {
-			return new $this->controller($this->action, $this->url_values);
 			//The Reflection API for getParentClass is hilariously bad
 			$rc = new ReflectionClass($this->controller);
 			$parent = (array) $rc->getParentClass();
@@ -40,7 +39,7 @@ class Router {
 			if (array_key_exists('name', $parent) && $parent['name'] === 'Controller') {
 				//Does it have the requested method?
 				if ($rc->hasMethod($this->action)) {
-					return new $this->controller($this->action, $this->url_values);
+					return $rc->newInstance($this->action, $this->url_values);
 				} else {
 					throw new Exception("Method doesn't exist: ".print_r($this->url_values, false));
 				}
