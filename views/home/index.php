@@ -1,0 +1,1 @@
+<p>This is an example view located in <?php echo $view_location; ?>.</p>
