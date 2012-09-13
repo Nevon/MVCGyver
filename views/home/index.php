@@ -1,1 +1,2 @@
 <p>This is an example view located in <?php echo $view_location; ?>.</p>
+<img src="<?php echo $view_model['base_url']; ?>/assets/images/macgyver.jpg" width="300" height="247" alt="My inspiration in life">

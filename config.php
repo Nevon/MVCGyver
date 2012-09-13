@@ -1,8 +1,13 @@
 <?php
 $config = array();
 
+//Error reporting
+error_reporting(-1);
+ini_set('display_errors', 1);
+
 //Site settings
-$config['site_title'] = 'MVCGyver';
+$config['site_title'] = '';
+$config['timezone'] = '';
 
 //URL settings
 $config['base_url'] = '';
