@@ -6,13 +6,14 @@ class Router {
 
 	//Store the URL values on object creation
 	public function __construct($url_values) {
+		global $config;
+
 		$this->url_values = $url_values;
 		
 		//Find the controller and method from the url.
 		//If they are not found, use default values.
-		//TODO: Use config file to get default values.
 		if ($this->url_values['controller'] === '') {
-			$this->controller = 'Home';
+			$this->controller = $config['default_controller'];
 		} else {
 			$this->controller = $this->url_values['controller'];
 		}
@@ -20,7 +21,7 @@ class Router {
 		$this->controller .= 'Controller';
 
 		if ($this->url_values['action'] === '') {
-			$this->action = 'index';
+			$this->action = $config['default_action'];
 		} else {
 			$this->action = $this->url_values['action'];
 		}
