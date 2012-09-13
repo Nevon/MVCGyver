@@ -15,6 +15,7 @@ $config['base_url'] = '';
 
 //Database settings
 $config['database'] = array(
+	'enabled' => false,
 	'host' => '',
 	'port' => '',
 	'username' => '',

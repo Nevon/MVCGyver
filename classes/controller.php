@@ -12,7 +12,7 @@ abstract class Controller {
 		return $this->{$this->action}();
 	}
 
-	protected function returnView($view_model, $full_view) {
+	protected function returnView($view_model, $full_view = true) {
 		//Strip out the "Controller" part from the controller name and 
 		//use that to find the corresponding view.
 		$view_location = strtolower('views/'.str_replace('Controller', '', get_class($this)).'/'.$this->action.'.php');
